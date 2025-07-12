@@ -134,6 +134,94 @@ document.querySelectorAll('.product-card').forEach(card => {
     });
 });
 
+// Category filtering functionality
+const categoryTabs = document.querySelectorAll('.category-tab');
+const productCards = document.querySelectorAll('.product-card');
+
+categoryTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        // Remove active class from all tabs
+        categoryTabs.forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        tab.classList.add('active');
+        
+        const selectedCategory = tab.getAttribute('data-category');
+        
+        // Filter products
+        productCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            
+            if (selectedCategory === 'all' || cardCategory === selectedCategory) {
+                card.style.display = 'block';
+                card.style.animation = 'fadeInUp 0.6s ease';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
+// Add to cart functionality
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const productCard = button.closest('.product-card');
+        const productName = productCard.querySelector('h3').textContent;
+        const productPrice = productCard.querySelector('.price').textContent;
+        
+        // Show success message
+        const originalText = button.textContent;
+        button.textContent = 'Added! ✓';
+        button.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+        button.disabled = true;
+        
+        // Create notification
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #8B5A96, #A67BB8);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            z-index: 10000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        `;
+        notification.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-check-circle"></i>
+                <span>${productName} added to cart!</span>
+            </div>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Animate notification in
+        setTimeout(() => {
+            notification.style.transform = 'translateX(0)';
+        }, 100);
+        
+        // Remove notification after 3 seconds
+        setTimeout(() => {
+            notification.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 300);
+        }, 3000);
+        
+        // Reset button after 2 seconds
+        setTimeout(() => {
+            button.textContent = originalText;
+            button.style.background = 'linear-gradient(135deg, #8B5A96, #A67BB8)';
+            button.disabled = false;
+        }, 2000);
+    });
+});
+
 // Add loading animation
 window.addEventListener('load', () => {
     document.body.style.opacity = '0';

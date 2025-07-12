@@ -52,30 +52,149 @@
     <section id="collection" class="collection">
         <div class="container">
             <h2 class="section-title">Our Collection</h2>
+            
+            <!-- Product Categories -->
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">All Products</button>
+                <button class="category-tab" data-category="rings">Rings</button>
+                <button class="category-tab" data-category="necklaces">Necklaces</button>
+                <button class="category-tab" data-category="earrings">Earrings</button>
+                <button class="category-tab" data-category="bracelets">Bracelets</button>
+            </div>
+
             <div class="products-grid">
-                <div class="product-card">
+                <!-- Rings -->
+                <div class="product-card" data-category="rings">
+                    <div class="product-image">
+                        <div class="jewelry-placeholder">💍</div>
+                        <div class="product-badge">Best Seller</div>
+                    </div>
+                    <h3>Rose Garden Ring</h3>
+                    <p>Delicate rose petals preserved in crystal with sterling silver band</p>
+                    <div class="product-details">
+                        <span class="price">$89</span>
+                        <span class="material">Sterling Silver</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="rings">
                     <div class="product-image">
                         <div class="jewelry-placeholder">💍</div>
                     </div>
-                    <h3>Rose Garden Ring</h3>
-                    <p>Delicate rose petals preserved in crystal</p>
-                    <span class="price">$89</span>
+                    <h3>Lavender Dream Ring</h3>
+                    <p>Fragrant lavender blooms in rose gold setting</p>
+                    <div class="product-details">
+                        <span class="price">$95</span>
+                        <span class="material">Rose Gold</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
-                <div class="product-card">
+
+                <!-- Necklaces -->
+                <div class="product-card" data-category="necklaces">
+                    <div class="product-image">
+                        <div class="jewelry-placeholder">📿</div>
+                        <div class="product-badge">New</div>
+                    </div>
+                    <h3>Lavender Necklace</h3>
+                    <p>Fragrant lavender blooms in sterling silver with adjustable chain</p>
+                    <div class="product-details">
+                        <span class="price">$129</span>
+                        <span class="material">Sterling Silver</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="necklaces">
                     <div class="product-image">
                         <div class="jewelry-placeholder">📿</div>
                     </div>
-                    <h3>Lavender Necklace</h3>
-                    <p>Fragrant lavender blooms in sterling silver</p>
-                    <span class="price">$129</span>
+                    <h3>Daisy Chain Necklace</h3>
+                    <p>Multiple daisy blooms in white gold with delicate chain</p>
+                    <div class="product-details">
+                        <span class="price">$145</span>
+                        <span class="material">White Gold</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
-                <div class="product-card">
+
+                <!-- Earrings -->
+                <div class="product-card" data-category="earrings">
                     <div class="product-image">
                         <div class="jewelry-placeholder">👂</div>
                     </div>
                     <h3>Daisy Earrings</h3>
-                    <p>Cheerful daisies captured in gold</p>
-                    <span class="price">$65</span>
+                    <p>Cheerful daisies captured in gold with pearl accents</p>
+                    <div class="product-details">
+                        <span class="price">$65</span>
+                        <span class="material">Gold</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="earrings">
+                    <div class="product-image">
+                        <div class="jewelry-placeholder">👂</div>
+                    </div>
+                    <h3>Rose Petal Studs</h3>
+                    <p>Delicate rose petals in sterling silver studs</p>
+                    <div class="product-details">
+                        <span class="price">$45</span>
+                        <span class="material">Sterling Silver</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <!-- Bracelets -->
+                <div class="product-card" data-category="bracelets">
+                    <div class="product-image">
+                        <div class="jewelry-placeholder">💫</div>
+                    </div>
+                    <h3>Wildflower Bracelet</h3>
+                    <p>Assorted wildflowers in sterling silver with adjustable clasp</p>
+                    <div class="product-details">
+                        <span class="price">$78</span>
+                        <span class="material">Sterling Silver</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="bracelets">
+                    <div class="product-image">
+                        <div class="jewelry-placeholder">💫</div>
+                    </div>
+                    <h3>Lavender Charm Bracelet</h3>
+                    <p>Lavender charms with crystal accents and gold plating</p>
+                    <div class="product-details">
+                        <span class="price">$92</span>
+                        <span class="material">Gold Plated</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product Features -->
+            <div class="product-features">
+                <div class="feature-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h4>Free Shipping</h4>
+                    <p>Worldwide shipping on orders over $100</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-heart"></i>
+                    <h4>Handcrafted</h4>
+                    <p>Each piece made with love and care</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Natural Preservation</h4>
+                    <p>Flowers preserved using traditional methods</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-undo"></i>
+                    <h4>30-Day Returns</h4>
+                    <p>Hassle-free returns and exchanges</p>
                 </div>
             </div>
         </div>
